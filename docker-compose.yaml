@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  backend:
+    build: ./backend
+    container_name: flask_backend
+    hostname: backend
+    ports:
+      - "5000:5000"
+    networks:
+      - mynetwork
+
+  frontend:
+    build: ./frontend
+    container_name: express_frontend
+    hostname: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
