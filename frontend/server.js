@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
-const BACKEND_URL = "http://localhost:5000/api";
+const BACKEND_URL = "http://13.235.80.146:5000/api";
 
 app.get('/', async (req, res) => {
   try {
